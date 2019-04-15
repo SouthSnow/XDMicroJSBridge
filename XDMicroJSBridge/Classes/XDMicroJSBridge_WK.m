@@ -9,7 +9,8 @@
 
 static NSString *injectJS = @"var XDMCBridge = {};var xd_jscallback_center={_callbackbuf:{},addCallback:function(a,c){\"function\"==typeof c&&(this._callbackbuf[a]=c)},fireCallback:function(a,c){if(\"string\"==typeof a){var f=this._callbackbuf[a];\"function\"==typeof f&&(void 0===c?f():f(c))}}};";
 
-static NSString *patternJS = @"%@.%@=function(){var a=arguments.length,e={methodName:\"%@\"},l=Array.from(arguments);a>0&&(\"function\"==typeof l[a-1]?(e.callbackId=\"%@\",e.params=a-1>0?l.slice(0,a-1):[]):e.params=l),null!=e.callbackId&&xd_jscallback_center.addCallback(e.callbackId,l[a-1]),window.webkit.messageHandlers.XDWKJB.postMessage(e)};";
+static NSString *patternJS = @"demo.%@=function(){var a=arguments.length,e={methodName:\"%@\"},l=Array.from(arguments);\
+a>0&&(\"function\"==typeof l[a-1]?(e.callbackId=\"%@\",e.params=a-1>0?l.slice(0,a-1):[]):e.params=l),null!=e.callbackId&&xd_jscallback_center.addCallback(e.callbackId,l[a-1]),window.webkit.messageHandlers.XDWKJB.postMessage(e)};";
 
 @interface XDWKWeakScriptMessageDelegate:NSObject<WKScriptMessageHandler>
 
@@ -74,7 +75,7 @@ static NSString *patternJS = @"%@.%@=function(){var a=arguments.length,e={method
 
 - (void)registerAction:(NSString *)action handler:(XDMCJSBHandle)handler {
     _jsValueDict[action] = handler;
-    NSString *jsStr = [NSString stringWithFormat:patternJS,_nameSpace,action,action,action];
+    NSString *jsStr = [NSString stringWithFormat:patternJS,action,action,action];
     WKUserScript *injectScript = [[WKUserScript alloc] initWithSource:jsStr injectionTime:WKUserScriptInjectionTimeAtDocumentStart forMainFrameOnly:NO];
     [_webview.configuration.userContentController addUserScript:injectScript];
 }
