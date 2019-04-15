@@ -9,7 +9,7 @@
 
 static NSString *injectJS = @"var XDMCBridge = {};var xd_jscallback_center={_callbackbuf:{},addCallback:function(a,c){\"function\"==typeof c&&(this._callbackbuf[a]=c)},fireCallback:function(a,c){if(\"string\"==typeof a){var f=this._callbackbuf[a];\"function\"==typeof f&&(void 0===c?f():f(c))}}};";
 
-static NSString *patternJS = @"demo.%@=function(){var a=arguments.length,e={methodName:\"%@\"},l=Array.from(arguments);\
+static NSString *patternJS = @"nameSpace.%@=function(){var a=arguments.length,e={methodName:\"%@\"},l=Array.from(arguments);\
 a>0&&(\"function\"==typeof l[a-1]?(e.callbackId=\"%@\",e.params=a-1>0?l.slice(0,a-1):[]):e.params=l),null!=e.callbackId&&xd_jscallback_center.addCallback(e.callbackId,l[a-1]),window.webkit.messageHandlers.XDWKJB.postMessage(e)};";
 
 @interface XDWKWeakScriptMessageDelegate:NSObject<WKScriptMessageHandler>
