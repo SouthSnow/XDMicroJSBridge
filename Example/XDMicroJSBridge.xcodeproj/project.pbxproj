@@ -264,7 +264,7 @@
 				ORGANIZATIONNAME = "458770054@qq.com";
 				TargetAttributes = {
 					6003F589195388D20070C39A = {
-						DevelopmentTeam = Z2975MRPKS;
+						DevelopmentTeam = S4YWE7KR47;
 						ProvisioningStyle = Automatic;
 					};
 					6003F5AD195388D20070C39A = {
@@ -277,6 +277,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -511,7 +512,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Z2975MRPKS;
+				DEVELOPMENT_TEAM = S4YWE7KR47;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "XDMicroJSBridge/XDMicroJSBridge-Prefix.pch";
 				INFOPLIST_FILE = "XDMicroJSBridge/XDMicroJSBridge-Info.plist";
@@ -531,7 +532,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Z2975MRPKS;
+				DEVELOPMENT_TEAM = S4YWE7KR47;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "XDMicroJSBridge/XDMicroJSBridge-Prefix.pch";
 				INFOPLIST_FILE = "XDMicroJSBridge/XDMicroJSBridge-Info.plist";

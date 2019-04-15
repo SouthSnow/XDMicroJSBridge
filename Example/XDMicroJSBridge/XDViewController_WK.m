@@ -34,7 +34,12 @@
     
     self.bridge = [[XDMicroJSBridge_WK alloc] init];
     self.webView = [_bridge getBridgeWebView];
-    _bridge.nameSpace = @"xxxxx";
+    
+    WKUserScript *injectScript = [[WKUserScript alloc] initWithSource:@"var nameSpace = 'demo'" injectionTime:WKUserScriptInjectionTimeAtDocumentStart forMainFrameOnly:NO];
+    [self.webView.configuration.userContentController addUserScript:injectScript];
+
+    
+//    _bridge.nameSpace = @"xxxxx";
     _webView.UIDelegate = self;
     _webView.navigationDelegate = self;
     _webView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
