@@ -7,8 +7,8 @@
     <script>
 // 调起相机
         function clickcamera() {
-            alert(nameSpace);
-            this.nameSpace.camerapicker(function (response) {
+<!--            alert(this.nameSpace);-->
+            demo.camerapicker(function (response) {
                 //response['photos']：回调回来的照片数组
                 var photos = response['photos'];
                 var insert = document.getElementById('insert');

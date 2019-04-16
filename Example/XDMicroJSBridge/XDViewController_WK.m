@@ -39,7 +39,7 @@
     [self.webView.configuration.userContentController addUserScript:injectScript];
 
     
-//    _bridge.nameSpace = @"xxxxx";
+    _bridge.nameSpace = @"demo";
     _webView.UIDelegate = self;
     _webView.navigationDelegate = self;
     _webView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
